@@ -13,6 +13,7 @@ Group:      System/Libraries
 License:    MIT
 URL:        http://www.x.org
 Source0:    http://xorg.freedesktop.org/releases/individual/lib/%{name}-%{version}.tar.bz2
+Source1001: packaging/libfontenc.manifest 
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(xorg-macros)
@@ -38,6 +39,7 @@ font encoding library development package
 %setup -q -n %{name}-%{version}
 
 %build
+cp %{SOURCE1001} .
 
 ./autogen.sh
 %configure --disable-static \
@@ -61,6 +63,7 @@ rm -rf %{buildroot}
 
 
 %files
+%manifest libfontenc.manifest
 %defattr(-,root,root,-)
 %doc COPYING README ChangeLog
 %{_libdir}/libfontenc.so.1
@@ -68,6 +71,7 @@ rm -rf %{buildroot}
 
 
 %files devel
+%manifest libfontenc.manifest
 %defattr(-,root,root,-)
 %dir %{_includedir}/X11
 %dir %{_includedir}/X11/fonts
