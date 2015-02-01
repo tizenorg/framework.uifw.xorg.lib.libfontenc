@@ -61,3 +61,4 @@ cp -af COPYING %{buildroot}/usr/share/license/%{name}
 %{_includedir}/X11/fonts/fontenc.h
 %{_libdir}/libfontenc.so
 %{_libdir}/pkgconfig/fontenc.pc
+
