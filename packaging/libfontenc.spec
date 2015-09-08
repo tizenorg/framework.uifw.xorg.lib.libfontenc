@@ -15,10 +15,8 @@ BuildRequires:  pkgconfig(xproto)
 BuildRequires:  zlib-devel
 BuildRequires:  autoconf
 
-
 %description
 font encoding library
-
 
 %package devel
 Summary:    X.Org X11 libfontenc development package
@@ -27,7 +25,6 @@ Requires:   %{name} = %{version}-%{release}
 
 %description devel
 font encoding library development package
-
 
 %prep
 %setup -q
@@ -42,25 +39,20 @@ make %{?jobs:-j%jobs}
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/license
+cp -af COPYING %{buildroot}/usr/share/license/%{name}
 %make_install
-
-
-
 
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
 
-
-
-
-
 %files
 %defattr(-,root,root,-)
-%doc COPYING README ChangeLog
+/usr/share/license/%{name}
+#%doc COPYING README ChangeLog
 %{_libdir}/libfontenc.so.1
 %{_libdir}/libfontenc.so.1.0.0
-
 
 %files devel
 %defattr(-,root,root,-)
