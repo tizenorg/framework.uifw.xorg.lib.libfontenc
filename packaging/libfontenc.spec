@@ -2,7 +2,7 @@
 
 Name:       libfontenc
 Summary:    X.Org X11 libfontenc runtime library
-Version: 1.1.0
+Version: 1.1.2
 Release:    3
 Group:      System/Libraries
 License:    MIT
@@ -61,4 +61,3 @@ cp -af COPYING %{buildroot}/usr/share/license/%{name}
 %{_includedir}/X11/fonts/fontenc.h
 %{_libdir}/libfontenc.so
 %{_libdir}/pkgconfig/fontenc.pc
-

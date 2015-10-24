@@ -15,4 +15,4 @@ autoconf -I m4
 
 cd $ORIGDIR || exit $?
 
-#$srcdir/configure --enable-maintainer-mode "$@"
+# $srcdir/configure --enable-maintainer-mode "$@"
